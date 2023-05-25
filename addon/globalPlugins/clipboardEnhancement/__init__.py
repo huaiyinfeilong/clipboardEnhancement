@@ -17,6 +17,8 @@ from .clipEditor import MyFrame
 from . import NAVScreenshot
 import os
 import json
+import review
+from .clipboardTextInfo import ClipboardTextInfo
 
 from versionInfo import version_year
 speechModule = speech.speech if version_year >= 2021 else speech
@@ -72,6 +74,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		如果为首次拷贝，则对比夹在的历史记录中的第一条数据是否与当前数据相同，若相同则说明数据重复，需删除记录
 		这是因为插件启动后，如果剪贴板中存在数据，插件会收到剪贴板拷贝事件，但剪贴板中的数据可能仍是上次插件退出时的数据"""
 		self.firstClipboardEvent = True
+		# 添加“剪贴板浏览模式”
+		mode = ("clipboard", _("剪贴板浏览模式"), self._getClipboardPosition)
+		review.modes.append(mode)
+
+	# 返回剪贴板对象
+	def _getClipboardPosition(self, obj):
+		return ClipboardTextInfo(self.lines), obj
 
 	# 保存剪贴板记录数据到磁盘
 	def _saveClipboardHistoryToFile(self):
