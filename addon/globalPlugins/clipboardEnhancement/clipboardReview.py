@@ -1,11 +1,12 @@
 import api
 import textInfos
 import documentBase
+import globalVars
 
 
 # 剪贴板文本信息类
 class ClipboardTextInfo(textInfos.offsets.OffsetsTextInfo):
-	def __init__(self, obj, position=textInfos.POSITION_FIRST):
+	def __init__(self, obj, position, navigatorObject=None):
 		super(ClipboardTextInfo, self).__init__(obj, position)
 
 	def _getStoryLength(self):
@@ -17,6 +18,9 @@ class ClipboardTextInfo(textInfos.offsets.OffsetsTextInfo):
 		except OSError:
 			text = ""
 		return text
+
+	def _getNVDAObjectFromOffset(self, offset):
+		return globalVars.cacheNavigatorObject
 
 
 # 剪贴板对象类

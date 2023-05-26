@@ -1321,3 +1321,233 @@ Author: Rui Batista <ruiandrebatista@gmail.com>
 Date:   Sun Aug 26 19:47:00 2012 +0100
 
     Initial Import.
+fix: 修复没有剪贴板文本数据但可以切换到剪贴板浏览模式的问题
+feat: 实现剪贴板浏览模式基础框架
+    feat: 新增剪贴板历史记录功能
+update buildvars
+Rearrange accelerator keys
+Remove unnecessary test code
+Release 2.6.1
+Fix bug updating editor.
+Release 2.6.0
+Bitmap data of the clipboard can be saved as a file.
+Improvements were made to the clipboard editor.
+Merge pull request #4 from huaiyinfeilong/master
+Merge branch 'master' into master
+feat: 支持含有空格字符的SAMBA和本地文件路径;
+feat: support the space character in SMB and local file path
+Updated docs and description
+resolve code conflicts
+Addressed part of flake8 suggestion
+Merge pull request #3 from huaiyinfeilong/master
+feat: 增加针对本地文件路径和SAMBA路径的支持
+Release version 2.5.0
+updated template
+Fixed the readme
+Fix some flake8 issues
+Updated add-on template
+2023.1 Compatibility Update
+released 2.4.9
+Released 2.4.8
+2.4.5 Release
+Better algorithm for calculating size
+Remove duplicate import
+Merge pull request #1 from zhyx-dev/speak-slowly
+fix naming error
+Update README.MD for  speak-slowly Feature.
+Feature: Repeat the last spoken with slower speed and stressed words.
+add-on is not intended to be used in secure screens.
+Minor update to readme
+Compatibility update for NVDA2022.1
+Release 2.3
+Improved appending selected text to clipboard
+Word count and get cursor position are disabled after enabling uia for word; Improved stability of pasting the last spoken text.
+Fixed clipboard monitoring occasionally failing in MS Word; No more errors after reloading addons.
+Use pickle for dictionary data instead of json
+Added feature to query dictionary with selected text
+Updated the dictionary database to add more entries
+Make the caret position of the clipboard editor follow the navigation position of the shortcut keys
+Use nvwave to play sound
+Modify the style of readme
+Improve date information, used sxtwl
+Improve documentation
+Fix the error of obtaining the lunar calendar in some cases.
+Release 2.0.1
+Fixed the problem that the regular expression replacement dialog box could not be opened
+Revision of the readme.
+Decrease the alert volume when viewing files
+There is no need to judge in advance before querying a word, and the code for judging whether it is an English word is removed, which can also solve the problem that viewing the current Chinese phrase will cause the navigation position to be lost.
+Do not use find to determine the navigation position during the navigation phrase
+Some constants separated
+Separate calendar module
+Fix the bug of early solar terms in the lunar calendar
+Rewritten focus follows logic
+Commit before replacing quotes
+fix
+BuildVars: edit Markdown extensions list comment (className is not needed).
+BuildVars: add markdownExteisions list.
+SConstruct: include tables extension.
+Merge pull request #20 from nvda-es/baseLanguage
+Merge branch 'master' into baseLanguage
+Merge pull request #19 from nvda-es/documentationTitlesTranslation
+Add-on documentation titles are now properly translated before generating HTML files. Contribution made by @paulber19
+Use baseLanguage variable also in scons clean command. Previously, instead of removing documentation for the chosen base language, english documentation was removed
+Readme: add information on command-line switches (with a caution message).
+BuildVars: grammar and punctuation.
+Merge pull request #17 from nvda-es/master
+BuildVars: fix comment length
+All links included in the documentation are now https instead of http
+Documentation: changed references from easy_install to pip
+Added baseLanguage variable to set the primary add-on language (useful if it's different from english).
+BuildVars: log -> look
+Merge pull request #16 from lukaszgo1/lint2
+buildVars: Explain how to specify source files of the add-on using Glob expressions.
+buildVars: Explaing why "fakae" gettext function is needed.
+Sconstruct: Import SCons functions explicitly to avoid F821 warnings from Flake8
+BuildVars: revert 'import os.path' based on comments by @Lukaszgo1.
+BuildVars: add an explanation regarding Gettext call
+Revert "BuildVars: restore lambda assignment (never, EVER change this line as indicated in the comment above)."
+SConstruct: explain that Flake8 F821 should be ignored as 'undefined' variables come from SCons.
+SConstruct/documentation generation optimization: write HTML text in one go instead of writing components (header, body, end) separately.
+SConstruct: put '+' at the beginning of each readme HTML header.
+SConstruct: do not allow build vars bytecode to be writtne (Flake8 E402 is hereby ignored).
+BuildVars: restore lambda assignment (never, EVER change this line as indicated in the comment above).
+Merge pull request #15 from lukaszgo1/lint
+BuildVars: spelling fixes, restore 'import os.path' with a NO QA flag.
+Sconstruct: No multiple statements on one line (Flake8 E701)
+Sconstructt: Commends should start with "# " (Flake8 E265)
+Sconstruct: Consistent indentation for dictionaries.
+Sconstruct: White space consistency (Flake8 E211, E225, E228, E231)
+Sconstruct: Two blank lines before functions and variables (Flake8 E302 E305)
+Sconstruct: No space before colon (E203) and split some long lines (E501)
+BuildVars: Remove unused import - add explanatory commend (flake8 E402 and F401)
+BuildVars: Split some long lines (Flake8 E501)
+buildVars: Do not assign a lambda (Flake8 E731)
+gettextool fix Flake8 errors ET113 and ET128
+Flake8 W391: no blank line at end of file
+Flake8 E225: space between equals operands
+Flake8 E205/E205: blank lines between function bodies in gettext tool
+Readme: additional edits and copyright year update
+Readme: add a dedicated add-on manifest section and update dependencies.
+BuildVars: comment edits and no more 'u' prefix in add-on author field.
+BuildVars: remove now obsolete and nonexistent Bitbucket URL. Fixes #14.
+Merge pull request #3 from accessolutions/issue-2
+Merge pull request #8 from accessolutions/issue-4
+Add-on version: update buildVars.addon_info with custom version and update channel coming from command line, mostly used to provide correct version for the resulting add-on documentation. Fixes #13.
+Sconstruct: update copyright header (also complies with Flake8)
+Merge branch 'master' into issue-2
+Merge branch 'master' into issue-4
+Merge pull request #11 from nvdaaddons/html5
+Merge branch 'master' into issue-2
+Merge branch 'master' into issue-4
+BuildVars: no whitespace between dictionary key and colon (Flake8 E203)
+Convert markdown to HTML 5
+Merge branch 'master' into issue-2
+Merge branch 'master' into issue-4
+Update channel: clarify about None versus other channels, add a warning that people should not change this unless one knows what's up.
+Python 2/3: do not write bytecode and remove dblite file.
+Python 3: various edits for sconstruct.
+NVDA translations list is now hosted on Groups.IO
+Readme: cosmetics and heading markup change.
+Readme: update copyright years
+BuildVars: change guidelines ilnk.
+Build vars/manifest: clarification on minimum version flag.
+Merge pull request #10 from accessolutions/issue-9
+.gitignore: Ignore .pyo files (#9)
+Doc style sheet: Remove inverted color scheme (#4)
+Include `pgettext` calls when extracting translatable string literals (#2)
+BuildVars template: include examples of year.major.minor in description.
+BuildVars and manifest template: add last NVDA version flag.
+Build vars and manifest: add update channel and minimum NvDA version keys.
+SConstruct: allow developers to specify add-on version and update channel via command line.
+SConstruct: remove extra spaces
+Update copyright years
+Readme: formatting changes, Markdown is now a requirement
+Update copyright years
+Ensure that the manifest is rebuilt if buildVars.py is updated.
+scons gettexttool: fixes/cleanups.
+Fix some typos in the gettextMergePotFile scons builder which were breaking it and causing it to print weird output.
+Changed comment: a menu item shouldn't be appended; instead the corresponding help button is enabled in add-ons manager.
+readme: added scons_sites as folder to be copied from addonTemplate.
+BuildVars: remove Doc Handler from i18n sources.
+Readme: Fixed small errors: removed mentioned file docHandler.
+Update README to reflect latest template modifications.
+Merge branch 'feature/tools'
+Use scons environment variable interpulation to simplify most code.
+Make gettext tool a package.
+Import gettext, we still need for manifest generation.
+Simplify gettext tool with more variable interpolation.
+Make gettext variables apear as top construction variables and much simplify gettext tool by taking advantage of variable interpolation.
+Refactoe gettext into an independent module.
+Removed docHandler dummy plugin, documentation is now handled in the add-ons  manager (see ticket #2694)
+Template: remolved addon folder; readme: modified to note that the add-on writer needs to create addon folder and needed module subfolders.
+Add-on template readme: add-ons require ConfigObj to be installed in order to build.
+Added the actual addon folder structure with required subfolders for module types. Because Git does not allow empty directories in repos, a readme.txt has been included in these folders. Add-on writers should not include these files in add-on code.
+Removed recommendation about using hyphens for creating lists in documentation, since they seem not to work in po conversion.
+updated .gitattributes, for better po file handling.
+updated docHandler:now non-latin characters are supported in the root of add-ons.
+Fixed bug; buildVars.py: used unicode in author field, as certain characters cannot be recognized when building the add-ons.
+buildVars.py: fixed capitalization in comment for translators.
+sconstruct: readme is lowercase when copied to doc folder.
+another fix for guidelines url, hopefully this should be a stable url now.
+Fixed URL for updated guidelines.
+Use unicode string when creating help menu item in docHandler.
+Copy of docHandler.py should not depend on copy of english README and css to doc folder. This makes scons also compute most dependencies by itself.
+Use scons copy action instead of shutil.copyfile when creating add-on help so cleanning and target dependencies work as expected.
+If docHandler.py is not present, don't copy README.md to the addon/doc/en folder, since it won't be used by defaulti. Alos lazily import markdown on HTML generation, if we don't have markdown files in the add-on the module is not needed on the system that is compiling it.
+Removed translatable strings of docHandler: the tooltip of the menu item is just the corresponding addon name.
+Readme - clarified the extension of the markdown file.
+Now fixed comment for description, dismissed in previous commit.
+Fixed revious dead link to guidelines. Fixed description comment as description is not shown on installation.
+Minor changes in readme.
+buildvars.py, cleanup/clarification, also refer to the guidelines for previously unpublished addons.
+Fixed comment: title for addon summary.
+* readme files are all expected to be named readme.md * Fixed bug where manifest files were not regenerated when buildVars changed.
+utf-8 declared in buildVars.py: now it's possible to use special characters for author names.
+* Fix typo * mension addon list * in case of problems, contact addon list, not Rui.
+Added suggestion about lists item. Minor changes: fixed spelling and grammar mistakes.
+Now list items of features are rendered properly.
+Minor changes: fixed readme.md. Tabs instead spaces in list items starting with *, so that they can be shown properly. Fixed guidelines to manage documentation.
+Fixed spelling mistake: character capitalization.
+Added style.css and markdown2HTML in features into readme.md.
+Support for markdown documentation files.
+Corrected message in docHandler. Added this file to i18nSources.
+Removed BOM in docHandler.
+Added to readme.md docHandler.py as file to be copied.
+Help menu will be added just for addons containing doc\en folder.
+Now docHandler is copied to globalPlugins folder and renamed as yourAddonName_docHandler.py automatically.
+Added a global plugin to append Open addons documentation item to NVDA's help menu.
+Merged in addonDocSupport (pull request #1)
+Support for addons documentation: initial commit.
+Mention copying .gitattributes and .gitignore in readme
+Added .gitattributes to ensure consistant line endings.
+Sconstruct - improved pot generation.
+updated .gitignore.
+buildVars.py, add missinv excludedFiles variable.
+added new goal mergePot to be used by updateAddons.sh, which only shows differences when messages change, not line numbers or header fields
+buildVars.py: fixed a little spelling error (informaiton instead of information).
+fixing indentation.
+Corrected bug introduced when extracting translated manfiest emplate (it wasn't using gettext at al). Use codecs module facilities to handle utf-8 encoding.
+Update README.md.
+Remove useless comments.
+Add a template named manifest-translated.ini.tpl for translated manifest files.
+Add triple quotes to description in manifest files so tey can span multipe lines.
+sconstruct: expandGlobs: Use nested list comprehension instead of reduce and operator.add.
+Added manifest variables.
+Corrected errors
+small corrections to readme.
+Merge.
+Updated README.
+Geerate translated manifest files from the po translation file so codec errors can be definitly avoided.
+Updated README with further instructions.
+Add a new add_info variable to the buildVars.py file
+Make manifest.ini a template in the top directory (manifest.ini.tpl)
+Make add-on explicitly dependent on all python sources.
+set some xgettext pot headers.
+update .gitignore.
+.gitignore, fix typo.
+add template .gitignore
+fix small linguistic issues.
+Update documentation to refere the pot target.
+Add pot target to the template, and better dependency checking. Customize buildVars.py for your own needs.
+Initial Import.

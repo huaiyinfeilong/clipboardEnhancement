@@ -19,9 +19,16 @@ import os
 import json
 import review
 from .clipboardReview import ClipboardObject
-
 from versionInfo import version_year
 speechModule = speech.speech if version_year >= 2021 else speech
+
+
+raw_setReviewPosition = None
+def proxy_setReviewPosition(reviewPosition, clearNavigatorObject=False, isCaret=False, isMouse=False):
+	global raw_setReviewPosition
+	clearNavigatorObject = True
+	print(f"reviewPosition={reviewPosition}")
+	return raw_setReviewPosition(reviewPosition, clearNavigatorObject, isCaret, isMouse)
 
 
 # 剪贴板记录数据文件
@@ -43,6 +50,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def __init__(self):
 		super().__init__()
+		global raw_setReviewPosition
+		raw_setReviewPosition = api.setReviewPosition
+		api.setReviewPosition = proxy_setReviewPosition
 		self.flg = 1
 		self.spoken2 = self.spoken = ""
 		self.spoken_word = self.spoken_char = -1
@@ -84,6 +94,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			api.getClipData()
 		except OSError:
 			return None
+		globalVars.cacheNavigatorObject = obj
 		clipObj = ClipboardObject()
 		return clipObj.makeTextInfo(textInfos.POSITION_FIRST), clipObj
 
@@ -744,6 +755,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.editor.isExit = True
 			self.editor.Destroy()
 		self.editor = None
+		# 卸载api.setReviewPosition挂钩
+		global raw_setReviewPosition
+		api.setReviewPosition = raw_setReviewPosition
 		super().terminate()
 
 	@scriptHandler.script(
