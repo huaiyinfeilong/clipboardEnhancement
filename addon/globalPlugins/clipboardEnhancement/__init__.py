@@ -18,7 +18,7 @@ from . import NAVScreenshot
 import os
 import json
 import review
-from .clipboardTextInfo import ClipboardTextInfo
+from .clipboardReview import ClipboardObject
 
 from versionInfo import version_year
 speechModule = speech.speech if version_year >= 2021 else speech
@@ -80,7 +80,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	# 返回剪贴板对象
 	def _getClipboardPosition(self, obj):
-		return ClipboardTextInfo(self.lines), obj
+		try:
+			api.getClipData()
+		except OSError:
+			return None
+		clipObj = ClipboardObject()
+		return clipObj.makeTextInfo(textInfos.POSITION_FIRST), clipObj
 
 	# 保存剪贴板记录数据到磁盘
 	def _saveClipboardHistoryToFile(self):
